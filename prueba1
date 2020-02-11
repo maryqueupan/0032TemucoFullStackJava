@@ -1,0 +1,195 @@
+Algoritmo sin_titulo
+	Repetir
+		Limpiar Pantalla
+		Escribir 'MENU'
+		Escribir ''
+		Escribir '1.Secuencial'
+		Escribir '2.Condicional Si entonces'
+		Escribir '3.Condicional Si entonces anidado'
+		Escribir '4.Condicional Segun'
+		Escribir '5.Repetitiva mientras'
+		Escribir '6.Repetitiva repetir'
+		Escribir '7.Repetitiva para'
+		Escribir '8.Arreglo simple'
+		Escribir '10.Salir'
+		Leer opc
+		Segun opc Hacer
+			1:
+				//Deberá pedir 3 números y mostrar el promedio de estos
+				Limpiar pantalla
+				Promedio<-0
+				Escribir 'Ingrese primer numero'
+				Leer n1
+				Escribir 'Ingrese segundo numero'
+				Leer n2
+				Escribir 'Ingrese tercer numero'
+				Leer n3
+				Promedio<-(n1+n2+n3)/3
+				Escribir 'El promedio de ', n1, ', ',n2, ' y ',n3, ' es ',promedio;
+				Esperar Tecla
+			2:
+				// En un lugar tradicional antiguo se pedirá Nombre y Género de la persona, siendoel género determinante para derivarlo al baño de mujeres u hombres
+				Limpiar Pantalla
+				Escribir 'Ingrese nombre'
+				Leer nombre
+				Escribir 'Ingrese f si es mujer o ingrese m si es hombre'
+				Leer genero
+				Si genero =='f' Entonces
+					Escribir nombre, ', usted debe pasar al baño de mujeres.'
+				SiNo
+					Escribir nombre,', usted debe pasar al baño de hombres..'
+				Fin Si
+				Esperar Tecla
+			3:
+				//Considerar función 2, y adicionar cobro de $250 si desea utilizar el baño o $ 2.500si desea utilizar la ducha. -
+				Limpiar Pantalla
+				Escribir 'Ingrese nombre'
+				Leer nombre
+				Escribir 'Ingrese f si es mujer o ingrese m si es hombre'
+				Leer genero
+				Escribir 'Elegir baño o ducha, escribir respuesta'
+				Leer respuesta
+				Si genero =='f' Entonces
+					Escribir nombre, ', usted debe pasar al baño de mujeres.'
+					Si respuesta == 'baño' Entonces
+						Escribir nombre, ', ademas debe cancelar $250 en caja'
+					SiNo
+						Escribir nombre, ', ademas debe cancelar $2500 en caja'
+					Fin Si
+				SiNo
+					Escribir nombre,', usted debe pasar al baño de hombres..'
+					Si respuesta == 'baño' Entonces
+						Escribir nombre, ', ademas debe cancelar $250 en caja'
+					SiNo
+						Escribir nombre, ' ademas debe cancelar $2500 en caja'
+					Fin Si
+				Fin Si
+				Esperar Tecla
+			4:
+				// Ingrese un número del 1 al 10 y mostrar el número en palabras
+				Limpiar Pantalla
+				Escribir 'Ingrese un numero del 1 al 10'
+				Leer num
+				Segun num Hacer
+					1:
+						num=1
+						Escribir 'uno'
+					2:
+						num=2
+						Escribir 'dos'
+					3:
+						num=3
+						Escribir 'tres'
+					4:
+						num=4
+						Escribir 'cuatro'
+					5:
+						num=5
+						Escribir 'cinco'
+					6:
+						num=6
+						Escribir 'seis'
+					7:
+						num=7
+						Escribir 'siete'
+					8:
+						num=8
+						Escribir 'ocho'
+					9: 
+						num=9
+						Escribir 'nueve'
+					10:
+						num=10
+						Escribir 'diez'
+						
+					De Otro Modo:
+						Escribir 'ERROR, ingrese un numero del 1 al 10'
+				Fin Segun
+				Esperar tecla
+			5:
+				Limpiar Pantalla
+				//Ingresar N números, detener el ingreso al digitar un cero, terminado el procesomostrar la cantidad de números ingresados excluyendo el 0, finalmente, calcular elpromedio de estos números
+				cont<-(-1)
+				acum<-0
+				num<-1
+				x<-0
+				Mientras num<>0 Hacer
+					Escribir 'Ingrese numero'
+					leer num
+					cont<-cont+1
+					acum<-acum+num
+				Fin Mientras
+				x<-acum/cont
+				escribir 'La cantidad de numeros ingresados es ', cont;
+				Escribir 'El promedio es ',x;
+				Esperar Tecla
+			6:
+				Limpiar Pantalla
+				// Ingresar N nombres con “J”, cuando ingrese el nombre "Juan" me diga “Ganaste”y muestre la cantidad de intentos antes de haber ganado.
+				cont<-(-1)
+				Repetir
+					Escribir 'ingrese nombres con j(minuscula)'
+					Leer nombre
+					cont<-cont+1
+				Hasta Que nombre='juan'
+				Si nombre='juan' Entonces
+					Escribir '¡GANASTE!!!'
+				Fin Si
+				Escribir 'Tus intentos fueron ',cont;
+				Esperar Tecla
+			7:
+				Limpiar Pantalla
+				// ?Para un máximo de 10 personas preguntar su nombre y mostrar los que repitenmás de 1 vez, en caso que los nombres no se repitan mostrar que no existen nombresrepetidos
+				Dimension array[10]
+				Para cont<-1 Hasta 10 Con Paso 1 Hacer
+					Escribir 'Ingrese nombre'
+					Leer nombre
+					array[cont]<-nombre
+					
+				Fin Para
+				
+				Escribir ''
+				Escribir 'no me funciono profe'
+				
+				Escribir 'Los nombres que se repiten son:'
+				Para cont1<-1 Hasta 10 Con Paso 1 Hacer
+					Para cont2<-cont1+1 Hasta 10 Con Paso 1 Hacer
+						Si array[cont1]==array[cont2] Entonces
+							Escribir array[cont1]
+						SiNo
+							Escribir 'No hay nombres que se repitan'
+						Fin Si
+					Fin Para
+				Fin Para
+				
+				Esperar Tecla
+				
+			8: Limpiar Pantalla
+				//Pedir el tamaño de un arreglo en el cual se debe ingresar la lista de TalentosDigitales Full Stack Java para luego desplegarlos en pantalla con un máximo de 5 alumnospor línea
+				Definir cantidad como entero
+				Escribir 'Ingrese cantidad'
+				Leer num
+				Dimension array[num]
+				
+				Para cont<-1 Hasta num Con Paso 1 Hacer
+					Escribir 'Ingrese nombre'
+					leer nombre
+					array[cont]<-nombre
+					
+				Fin Para
+				Limpiar Pantalla
+				cont2<-1
+				Para cont<-1 Hasta num Con Paso 1 Hacer
+					Si cont2==5 Entonces
+						cont2<-1
+						Escribir '(', array[cont], ')'
+					SiNo
+						Escribir '(' array[cont], ')' sin saltar
+						cont2<-cont2+1
+					Fin Si
+					
+				Fin Para
+				Esperar tecla
+		Fin Segun
+	Hasta Que opc==10
+FinAlgoritmo
